@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de Cédula - Mi Aplicación</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        /* Estilos adicionales si los necesitas, por ejemplo, para espaciado del main */
+        main {
+            padding-top: 20px; /* Para que el contenido no quede pegado al nav */
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">INE | CONTRATO DE CONFIDENCIALIDAD Y RESERVA DE INFORMACIÓN 
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Hogar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inicio de sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Administrador</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg mt-5">
+                    <div class="card-header bg-info text-white">
+                        <h4 class="mb-0">Búsqueda de Cédula de Identidad</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="searchForm" action="redireccionar.php" method="post">
+                            <div class="mb-3">
+                                <label for="cedulaInput" class="form-label">Número de Cédula:</label>
+                                <input type="text" class="form-control" id="cedulaInput" name="cedula" 
+                                       placeholder="Ej: 12345678" 
+                                       required pattern="^\d{6,9}$" 
+                                       title="Solo números, entre 6 y 9 dígitos.">
+                                <div id="cedulaHelp" class="form-text">
+                                    Introduce solo los números de tu cédula (sin puntos, comas ni letras).
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Buscar</button>
+                        </form>
+                        <div id="searchResults" class="mt-4">
+                            <?php
+                            session_start(); // Inicia la sesión para acceder a mensajes de sesión
+                            if (isset($_SESSION['error_message'])) {
+                                echo '<div class="alert alert-danger" role="alert">' . $_SESSION['error_message'] . '</div>';
+                                unset($_SESSION['error_message']); // Limpiar el mensaje después de mostrarlo
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-5 py-3">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">La Aplicación</h5>
+                    <p>
+                        Esta es una aplicación para el regístro de datos para el CONTRATO DE CONFIDENCIALIDAD Y RESERVA ABSOLUTA de los datos e información del Instituto Nacional de Estadísticas (INE).
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Enlaces Útiles</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="contrato.php" target="_self" class="text-dark">Enlaces 01: Probar WebApp</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="text-dark">Enlaces 02</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2025 Instituto Nacional de Estadísticas. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    </body>
+</html>
