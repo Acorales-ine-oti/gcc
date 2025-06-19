@@ -73,16 +73,7 @@ session_start(); // ¡ESTA LÍNEA DEBE IR AL PRINCIPIO DEL ARCHIVO!
                             <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">Acerca de</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#services">Servicios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">Acceder</a>
+                            <a class="nav-link active" href="login.php">Acceder</a>
                         </li>
                     </ul>
                 </div>
@@ -159,12 +150,12 @@ session_start(); // ¡ESTA LÍNEA DEBE IR AL PRINCIPIO DEL ARCHIVO!
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase">Enlaces Útiles</h5>
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="contrato.php" target="_self" class="text-dark">Enlace 01</a>
+                    <ul class="list mb-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Servicios</a>
                         </li>
-                        <li>
-                            <a href="#!" class="text-dark">Enlace 02</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contacto</a>
                         </li>
                     </ul>
                 </div>
