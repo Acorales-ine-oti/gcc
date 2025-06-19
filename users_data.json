@@ -1,0 +1,16 @@
+{
+    "users": [
+        {
+            "cedula": "16075799",
+            "nombre": "Carlos",
+            "email": "asdrubal.corales@ine.gob.ve",
+            "password_hash": "$2y$10$clnC3kH6\/zswmleKx1NdGe.nMGbviq1WGgyfLW1jDR8CImOpxzsf."
+        },
+        {
+            "cedula": "99456789",
+            "nombre": "Carlos",
+            "email": "asdrubal.corales@ine.gob.ve",
+            "password_hash": "$2y$10$XF\/SDOW.cbkJptv\/ty09UeecYS6rmTA6ebhQSMLqHeHXMnS.DWhY2"
+        }
+    ]
+}
